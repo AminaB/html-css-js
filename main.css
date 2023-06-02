@@ -1,4 +1,10 @@
 /* Import Google font - Poppins */
+/* -----------------colors ----------------
+      grise = #8d8c8d  #828182
+      orange =#f45d01
+      jaune = #EEB902
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -10,7 +16,7 @@
   position: fixed;
   height: 100%;
   width: 260px;
-  background: #cf711f;
+  background: #EEB902;
   padding: 15px;
   z-index: 99;
 }
@@ -19,7 +25,7 @@
   padding: 0 15px;
 }
 .sidebar a {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 .menu-content {
@@ -42,7 +48,7 @@
   transform: translateX(-56%);
 }
 .menu-title {
-  color: #fff;
+  color: #000;
   font-size: 14px;
   padding: 15px 20px;
 }
@@ -65,7 +71,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: #000;
   cursor: pointer;
 }
 .submenu {
@@ -75,7 +81,7 @@
   top: 0;
   right: calc(-100% - 26px);
   height: calc(100% + 100vh);
-  background: #cf711f;
+  background: #EEB902;
   display: none;
 }
 .show-submenu ~ .submenu {
