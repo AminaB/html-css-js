@@ -8,6 +8,11 @@
     colors 
     Dribble.com : for color inspiration (install colorZilla to copy colors)
     Coolors.co : to generate matching colors 
+---------------------------------
+    inspiration 
+    www.lapa.ninja
+    land-book.com
+    ww.pinterest.com
 ## webflow
     is a platform to create site web without code
     - course material: https://www.vakoshvili.com/resources
