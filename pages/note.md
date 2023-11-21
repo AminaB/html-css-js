@@ -6,8 +6,4 @@
 ### float
     float : left, right
     clear : both
-### flex box
-    display : flex ( all element will be in same line 100% of width)
-    display: inline-flex (take the space elements needed)
-    gap : 10 (space between element)
-    flex-direction : row(default), or column
+
