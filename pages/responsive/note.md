@@ -26,3 +26,8 @@
     align-self : flex-start. separate one itme from the group
     
     guide : https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+### grid
+     display : grid
+     grid-template-column : 1fr 2fr
+     gir-template-row : 1fr 1fr
