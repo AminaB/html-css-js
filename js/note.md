@@ -12,3 +12,6 @@ tools :
 
 
 Values are stored on the stack (primitive values), and reference values are stored on the heap
+
+
+array spread operators : [...array1, ...array2],  [...array1,array2]
