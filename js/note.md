@@ -9,4 +9,6 @@ JS :
     creating APIS & web service node.js, Deno
 tools : 
     install node.js to run js code without browser.
-   
+
+
+Values are stored on the stack (primitive values), and reference values are stored on the heap
