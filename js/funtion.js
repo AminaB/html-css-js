@@ -24,4 +24,3 @@ console.log(minMax(1,2,5,3,4));
 (function(lenght, width){
     console.log(`${lenght* width}`)
 })(10,5);
-

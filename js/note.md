@@ -19,3 +19,5 @@ array spread operators : [...array1, ...array2],  [...array1,array2]
 functions : deslaration, expression and arrow funtion (lambda)
 
 execution context : JS is single theaded lagage ans its synchronyse. 
+
+functions in array : filter, map, reduce
