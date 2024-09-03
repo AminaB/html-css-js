@@ -26,12 +26,54 @@ console.log(b);
 
 // ?? - Returns the right side operand when the left is null or undefined
 
-let c;
+
 
 c = 10 ?? 20;
 c = null ?? 20;
 c = undefined ?? 30;
 c = 0 ?? 30;
 c = '' ?? 30;
+
+console.log(c);
+
+// ||= assigns the right side value only if the left is a falsy value.
+
+a = null;
+
+// if (!a) {
+//   a = 10;
+// }
+
+// a = a || 10;
+
+a ||= 10;
+
+console.log(a);
+
+// &&= assigns the right side value only if the left is a truthy value.
+
+b = 10;
+
+if (b) {
+  b = 20;
+}
+
+b = b && 20;
+
+b &&= 20;
+
+console.log(b);
+
+// ??= assigns the right side value only if the left is null or undefined.
+
+c = null;
+
+if (c === null || c === undefined) {
+  c = 20;
+}
+
+c = c ?? 20;
+
+c ??= 20;
 
 console.log(c);
