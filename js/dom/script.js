@@ -77,3 +77,16 @@ output= secondItem.nextElementSibling;
 
 //nodes
 output= parent.childNodes[3];  //parentNode, parentElement, nextElementSibbling,
+
+//create Element, and append
+const div=document.createElement('div');
+div.className='my-element';
+div.id='my-element';
+div.setAttribute('title','MY element');
+//div.innerText='Hello World';
+const text=document.createTextNode('Hello world')
+div.appendChild(text);
+document.body.appendChild(div);
+document.querySelector('ul').appendChild(div);
+
+
