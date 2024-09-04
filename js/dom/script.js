@@ -74,3 +74,6 @@ child.parentElement.style.border='1px solid #ccc';
 //sibbling element
 const secondItem= document.querySelector('.cild:nth-child(2)');
 output= secondItem.nextElementSibling;
+
+//nodes
+output= parent.childNodes[3];  //parentNode, parentElement, nextElementSibbling,
