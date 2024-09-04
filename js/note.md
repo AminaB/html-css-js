@@ -21,3 +21,7 @@ functions : deslaration, expression and arrow funtion (lambda)
 execution context : JS is single theaded lagage ans its synchronyse. 
 
 functions in array : filter, map, reduce
+
+-------------DOM
+document.querySelectorAll('.item); // liste items 
+

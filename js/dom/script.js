@@ -52,3 +52,25 @@ const forms = Array.from(document.forms);
 forms.forEach((form) => console.log(form));
 
 console.log(output);
+
+
+// html selector
+const listItemp = document.querySelectorAll('.item');
+const listItems= Array.from(listItemp);
+
+const listItems3= document.getElementsByTagName('li');
+
+
+// child and parent element
+
+const parent = document.querySelector('.parent');
+let output2= parent.children[1].innerText;
+parent.firstElementChild.innerText='child one';
+
+const child = document.querySelector('.child');
+parent= child.parentElement;
+child.parentElement.style.border='1px solid #ccc';
+
+//sibbling element
+const secondItem= document.querySelector('.cild:nth-child(2)');
+output= secondItem.nextElementSibling;
