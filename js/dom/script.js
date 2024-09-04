@@ -72,7 +72,7 @@ parent= child.parentElement;
 child.parentElement.style.border='1px solid #ccc';
 
 //sibbling element
-const secondItem= document.querySelector('.cild:nth-child(2)');
+const secondItem= document.querySelector('.child:nth-child(2)');
 output= secondItem.nextElementSibling;
 
 //nodes
@@ -88,5 +88,8 @@ const text=document.createTextNode('Hello world')
 div.appendChild(text);
 document.body.appendChild(div);
 document.querySelector('ul').appendChild(div);
+
+
+
 
 

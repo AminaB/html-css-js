@@ -25,3 +25,5 @@ functions in array : filter, map, reduce
 -------------DOM
 document.querySelectorAll('.item); // liste items 
 
+toggle : switch between two state
+
