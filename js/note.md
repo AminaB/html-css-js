@@ -27,3 +27,4 @@ document.querySelectorAll('.item); // liste items
 
 toggle : switch between two state
 
+Don't put event attribute like onclick in html, it is not secure
