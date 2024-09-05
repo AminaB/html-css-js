@@ -15,7 +15,7 @@ const onKeyDown = (e) => {
 //   }
 
     // keyCode
-  // https://www.toptal.com/developers/keycode/table-of-all-keycodes
+  //https://www.toptal.com/developers/keycode
   if (e.keyCode === 13) {
     alert('You pressed enter');
   }
