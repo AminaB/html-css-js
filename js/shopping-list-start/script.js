@@ -9,7 +9,16 @@ const newItem=itemInput.value;
 function addItem(e){
     e.preventDefault();
 
-    if(newItem===''){
+    addItemToDom(newItem);
+
+    // add item to local storage
+    addItemToStorage(newItem)
+    checkUI();
+    itemInput.value='';
+   
+}
+function addItemToDom(newItem){
+  if(newItem===''){
         alert('please add an item');
         return;
     }
@@ -19,22 +28,11 @@ function addItem(e){
     li.appendChild(button);
 
     itemList.appendChild(li);
-
-    // add item to local storage
-    addItemToStorage(newItem)
-    checkUI();
-    itemInput.value='';
-   
 }
 
 function addItemToStorage(item){
-    let itemsFromStorage;
-    if(localStorage.getItem('items')== null){
-        itemsFromStorage=[];
+    const itemsFromStorage=getItemFromStorage();
     
-    }else{
-        itemsFromStorage=JSON.parse(localStorage.getItem('items'));
-    }
     itemsFromStorage.push(item);
     localStorage.setItem('items', JSON.stringify(itemsFromStorage));
 }
@@ -51,7 +49,6 @@ function createIcon(classes){
     return icon;
 }
 
-itemForm.addEventListener('submit', addItem)
 
 // remove item
 
@@ -65,7 +62,6 @@ function removeItem(e){
 
 }
 
-itemList.addEventListener('click', removeItem);
 
 
 //clear all item
@@ -76,7 +72,6 @@ function removeItems(){
     }
     checkUI();
 }
-clearButton.addEventListener('click', removeItems);
 
 // clear UI
 function checkUI(){
@@ -94,7 +89,6 @@ function checkUI(){
     }
 }
 
-checkUI();
 
 
 // filter 
@@ -111,4 +105,34 @@ function filterItems(e){
     });
 }
 
-itemFilter.addEventListener('input', filterItems)
+
+
+// getItemFromStorage
+function getItemFromStorage(){
+    let itemsFromStorage;
+    if(localStorage.getItem('items')== null){
+        itemsFromStorage=[];
+    
+    }else{
+        itemsFromStorage=JSON.parse(localStorage.getItem('items'));
+    }
+    return itemsFromStorage;
+}
+
+function displayItems(){
+    const itemsFromStorage=getItemFromStorage();
+    itemsFromStorage.forEach((item)=> addItemToDom(item));
+    checkUI();
+}
+
+
+function init(){
+    itemForm.addEventListener('submit', addItem)
+    itemList.addEventListener('click', removeItem);
+    clearButton.addEventListener('click', removeItems);
+    itemFilter.addEventListener('input', filterItems)
+    document.addEventListener('DOMContentLoaded', displayItems);
+    checkUI();
+}
+
+init();
