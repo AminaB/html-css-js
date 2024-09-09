@@ -30,3 +30,6 @@ toggle : switch between two state
 Don't put event attribute like onclick in html, it is not secure
 
 with  you want to put the js in the head use "defer"
+
+-----------hosting free
+Netlify : https://app.netlify.com/teams/aminab/sites
