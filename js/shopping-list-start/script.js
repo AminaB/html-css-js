@@ -5,9 +5,9 @@ const clearButton= document.getElementById('clear');
 const itemFilter= document.getElementById('filter');
 
 
-const newItem=itemInput.value;
 function addItem(e){
     e.preventDefault();
+    const newItem=itemInput.value;
 
     addItemToDom(newItem);
 
@@ -19,7 +19,8 @@ function addItem(e){
 }
 function addItemToDom(newItem){
   if(newItem===''){
-        alert('please add an item');
+    console.log('rrrr')
+        alert("please enter a value");
         return;
     }
     const li =document.createElement('li');
@@ -52,17 +53,31 @@ function createIcon(classes){
 
 // remove item
 
-function removeItem(e){
-    if(e.target.parentElement.classList.contains('remove-item')){
-        if(confirm('Are you sure?')){
-            e.target.parentElement.parentElement.remove();
-            checkUI();
-        }
+function removeItem(item){
+  
+    if(confirm('Are you sure?')){
+        //remove from dom
+        item.remove();
+        //remove from storage
+        removeItemFromStorage(item.textContent);
+        checkUI();
     }
+    
 
 }
+function removeItemFromStorage(item){
+    let itemsFromStorage= getItemFromStorage();
+    itemsFromStorage= itemsFromStorage.filter((i)=>i!==item);
+    localStorage.setItem('item', JSON.stringify(itemsFromStorage));
 
-
+}
+// delete item from localStorage
+function onClickItem(e){
+    console.log('kkkk')
+     if(e.target.parentElement.classList.contains('remove-item')){
+        removeItem(e.target.parentElement.parentElement);
+     }
+}
 
 //clear all item
 
@@ -97,7 +112,7 @@ function filterItems(e){
     const text = e.target.value.toLowerCase();
     items.forEach(item=>{
         const itemName=item.firstChild.textContent.toLowerCase();
-        if(itemName.indexOf(text)!=-1){
+        if(itemName.indexOf(text)!==-1){
             item.style.display='flex';
         }else{
              item.style.display='none';
@@ -126,9 +141,12 @@ function displayItems(){
 }
 
 
+
+
 function init(){
+    console.log('kkk')
     itemForm.addEventListener('submit', addItem)
-    itemList.addEventListener('click', removeItem);
+    itemList.addEventListener('click', onClickItem);
     clearButton.addEventListener('click', removeItems);
     itemFilter.addEventListener('input', filterItems)
     document.addEventListener('DOMContentLoaded', displayItems);
@@ -136,3 +154,4 @@ function init(){
 }
 
 init();
+console.log('hhhhhhhhhhhhhh');
