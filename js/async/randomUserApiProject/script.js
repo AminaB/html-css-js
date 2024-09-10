@@ -11,7 +11,7 @@ function fetchUser(){
 
 function disPlayUser(user){
   const userEl=document.getElementById('user');
-  if(user.geder==='male'){
+  if(user.gender==='male'){
     document.body.style.backgroundColor='blue';
   }else{
     document.body.style.backgroundColor='purple';
