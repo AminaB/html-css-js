@@ -34,3 +34,11 @@ with  you want to put the js in the head use "defer"
 -----------hosting free
 Netlify : https://app.netlify.com/teams/aminab/sites
 buy domain name : https://www.namecheap.com
+
+
+-------async javaScipt
+callback
+promise
+Ajax and XHR object
+
+-----fetch api ans async await
