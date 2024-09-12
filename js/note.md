@@ -1,3 +1,4 @@
+cours : modern-javascript-from-the-beginning udemy
 JS :
     DOM
     Event
@@ -42,3 +43,13 @@ promise
 Ajax and XHR object
 
 -----fetch api ans async await
+
+
+---------------Web API 
+geolocation : navigator.geolocation.getCurentOisition(sucessFunc, errFunction, options);
+position on map : https://unpkg.com/leaflet
+canva : <canva></canva>
+requestAnimationFrame : see clock mini projetc
+Audio : music player project <audio></audio>
+video : <video></video>
+speech recognition : window.speechRecognition ...
