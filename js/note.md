@@ -1,3 +1,4 @@
+lucid.app // to draw chart and diagram
 cours : modern-javascript-from-the-beginning udemy
 JS :
     DOM
@@ -53,3 +54,5 @@ requestAnimationFrame : see clock mini projetc
 Audio : music player project <audio></audio>
 video : <video></video>
 speech recognition : window.speechRecognition ...
+
+------------ OOP
