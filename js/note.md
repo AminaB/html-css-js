@@ -56,3 +56,12 @@ video : <video></video>
 speech recognition : window.speechRecognition ...
 
 ------------ OOP
+
+--- module tooling---------
+
+
+js package manager : npm
+Common JS modules : use by node.js
+ES modules : commonly used in the front-end
+
+

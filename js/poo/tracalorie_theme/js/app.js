@@ -11,7 +11,8 @@ class CalorieTracker{
         this._displayCalories();
         this._displayCaloriesConsumed();
         this._displayCaloriesBurned();
-        this._displayCaloriesRemaining()
+        this._displayCaloriesRemaining();
+        this._displayCaloriesProgress();
 
     }
     addMeal(meal){
@@ -41,19 +42,39 @@ class CalorieTracker{
     }
     _displayCaloriesRemaining(){
         const caloriesRemainingEl= document.getElementById('calories-remaining');
+        const progressEl = document.getElementById('calorie-progress');
         const remain=this._calorieLimit - this._totalCalories;
         caloriesRemainingEl.innerHTML=remain;
+        if(remain<0){
+            console.log('here')
+            caloriesRemainingEl.parentElement.parentElement.classList.remove('bg-light');
+            caloriesRemainingEl.parentElement.parentElement.classList.add('bg-danger');
+            progressEl.classList.add('bg-danger');
+            progressEl.classList.remove('bg-success');
+        }else{
+            caloriesRemainingEl.parentElement.parentElement.classList.remove('bg-danger');
+            caloriesRemainingEl.parentElement.parentElement.classList.add('bg-light');
+            progressEl.classList.add('bg-success');
+            progressEl.classList.remove('bg-danger');
+        }
     }
     _displayCaloriesLimit(){
         const caloriesLimitEl= document.getElementById('calories-limit');
         caloriesLimitEl.innerHTML=this._calorieLimit;
     }
+    _displayCaloriesProgress() {
+        const progressEl = document.getElementById('calorie-progress');
+        const percentage = (this._totalCalories / this._calorieLimit) * 100;
+        const width = Math.min(percentage, 100);
+        progressEl.style.width = `${width}%`;
+
+    }
     _render(){
         this._displayCalories();
         this._displayCaloriesConsumed();
         this._displayCaloriesBurned();
-        this._displayCaloriesRemaining()
-
+        this._displayCaloriesRemaining();
+        this._displayCaloriesProgress();
 
     }
 }
@@ -75,7 +96,7 @@ class Workout{
 const tracker = new CalorieTracker();
 
 const breakFast= new Meal('Breakfast', 400);
-const lunch= new Meal('Lunch', 350);
+const lunch= new Meal('Lunch', 2000);
 tracker.addMeal(breakFast);
 tracker.addMeal(lunch);
 
