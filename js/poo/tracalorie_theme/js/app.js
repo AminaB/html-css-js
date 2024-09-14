@@ -19,29 +19,60 @@ class CalorieTracker{
         this._meals.push(meal);
         this._totalCalories+=meal._calories;
         this._render();
+        this._displayItem('meal', meal)
     }
     addWorkout(workout){
         this._workouts.push(workout);
         this._totalCalories-=workout._calories;
         this._render();
+        this._displayItem('workout', workout)
     }
     // private methods
     _displayCalories(){
         const totalCaloriesEl= document.getElementById('calories-total')
         totalCaloriesEl.innerHTML=this._totalCalories;
     }
-    _displayCaloriesConsumed(){
-        const caloriesConsumedEl= document.getElementById('calories-consumed');
-        const consumed = this._meals.reduce((total, meal)=>total+meal._calories,0);
-        caloriesConsumedEl.innerHTML=consumed;
+    _displayItem(type,item){
+        console.log(item);
+        const itemsListEl= document.getElementById(`${type}-items`);
+        const div = document.createElement('div');
+        div.classList.add('card', 'my-2');
+        div.innerHTML= `
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                    <h4 class="mx-1">${item._name}</h4>
+                    ${type === 'workout'
+                    ? `<div  class="fs-1 bg-secondary text-white text-center rounded-2 px-2 px-sm-5">
+                        ${item._calories}
+                    </div>`
+                    : `<div class="fs-1 bg-primary text-white text-center rounded-2 px-2 px-sm-5">
+                        ${item._calories}
+                    </div>`
+                    }
+                   
+                    <button class="delete btn btn-danger btn-sm mx-2">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        itemsListEl.appendChild(div);
     }
-    _displayCaloriesBurned(){
-        const caloriesBurnedEl= document.getElementById('calories-burned');
-        const burned = this._workouts.reduce((total, workout)=>total+workout._calories,0);
-        caloriesBurnedEl.innerHTML=burned;
+
+    _displayCaloriesConsumed() {
+        const caloriesConsumedEl = document.getElementById('calories-consumed');
+        const consumed = this._meals.reduce((total, meal) => total + meal._calories, 0);
+        caloriesConsumedEl.innerHTML = consumed;
     }
-    _displayCaloriesRemaining(){
-        const caloriesRemainingEl= document.getElementById('calories-remaining');
+
+    _displayCaloriesBurned() {
+        const caloriesBurnedEl = document.getElementById('calories-burned');
+        const burned = this._workouts.reduce((total, workout) => total + workout._calories, 0);
+        caloriesBurnedEl.innerHTML = burned;
+    }
+
+    _displayCaloriesRemaining() {
+        const caloriesRemainingEl = document.getElementById('calories-remaining');
         const progressEl = document.getElementById('calorie-progress');
         const remain=this._calorieLimit - this._totalCalories;
         caloriesRemainingEl.innerHTML=remain;
@@ -105,6 +136,7 @@ class App{
         e.preventDefault();
         const name=document.getElementById(`${type}-name`);
         const calories=document.getElementById(`${type}-calories`);
+
         if(name.value==='' || calories.value===''){
             alert('Please fill in all fields');
             return;
