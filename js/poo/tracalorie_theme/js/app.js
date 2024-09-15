@@ -27,16 +27,43 @@ class CalorieTracker{
         this._render();
         this._displayItem('workout', workout)
     }
+    removeMeal(id){
+        const index= this._meals.findIndex(meal => meal.id === id);
+        console.log(index);
+        if(index !== -1){
+            const meal=this._meals[index];
+            this._meals.splice(index, 1);
+            console.log(this._totalCalories);
+            console.log(meal._calories);
+            this._totalCalories+=meal._calories;
+
+            this._render();
+        }
+
+    }
+    removeWorkout(id){
+        const index= this._workouts.findIndex(meal => meal.id === id);
+        if(index > -1){
+            const workout=this._workouts[index];
+            this._workouts.splice(index, 1);
+            this._totalCalories-=workout._calories;
+            this._render();
+        }
+    }
     // private methods
     _displayCalories(){
         const totalCaloriesEl= document.getElementById('calories-total')
         totalCaloriesEl.innerHTML=this._totalCalories;
     }
+    _deleteDomItem(type, item){
+
+    }
     _displayItem(type,item){
-        console.log(item);
+        //console.log(item);
         const itemsListEl= document.getElementById(`${type}-items`);
         const div = document.createElement('div');
         div.classList.add('card', 'my-2');
+        div.setAttribute('data-id', item.id);
         div.innerHTML= `
             <div class="card-body">
                 <div class="d-flex align-items-center justify-content-between">
@@ -77,7 +104,6 @@ class CalorieTracker{
         const remain=this._calorieLimit - this._totalCalories;
         caloriesRemainingEl.innerHTML=remain;
         if(remain<0){
-            console.log('here')
             caloriesRemainingEl.parentElement.parentElement.classList.remove('bg-light');
             caloriesRemainingEl.parentElement.parentElement.classList.add('bg-danger');
             progressEl.classList.add('bg-danger');
@@ -130,8 +156,29 @@ class App{
             .addEventListener('submit', this._newItem.bind(this,'meal'));
         document.getElementById('workout-form')
             .addEventListener('submit', this._newItem.bind(this,'workout'));
-    }
+        document.getElementById('meal-items')
+            .addEventListener('click',this._removeItem.bind(this,'meal'));
+        document.getElementById('workout-items')
+            .addEventListener('click',this._removeItem.bind(this,'workout'));
 
+
+    }
+    _removeItem(type,e){
+
+        if(e.target.classList.contains('delete')
+        || e.target.classList.contains('fa-xmark')) {
+            if (confirm('Are you sure?')) {
+               // console.log(type);
+                const id = e.target.closest('.card').getAttribute('data-id');
+                if (type === 'workout') {
+                    this._tracker.removeWorkout(id);
+                } else {
+                    this._tracker.removeMeal(id);
+                }
+                e.target.closest('.card').remove();
+            }
+        }
+    }
     _newItem(type,e){
         e.preventDefault();
         const name=document.getElementById(`${type}-name`);
