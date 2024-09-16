@@ -29,13 +29,10 @@ class CalorieTracker{
     }
     removeMeal(id){
         const index= this._meals.findIndex(meal => meal.id === id);
-        console.log(index);
         if(index !== -1){
             const meal=this._meals[index];
             this._meals.splice(index, 1);
-            console.log(this._totalCalories);
-            console.log(meal._calories);
-            this._totalCalories+=meal._calories;
+            this._totalCalories-=meal._calories;
 
             this._render();
         }
@@ -46,7 +43,7 @@ class CalorieTracker{
         if(index > -1){
             const workout=this._workouts[index];
             this._workouts.splice(index, 1);
-            this._totalCalories-=workout._calories;
+            this._totalCalories+=workout._calories;
             this._render();
         }
     }
@@ -134,6 +131,13 @@ class CalorieTracker{
         this._displayCaloriesProgress();
 
     }
+
+    _reset() {
+        this._totalCalories=0;
+        this._meals=[];
+        this._workouts=[];
+        this._render();
+    }
 }
 class Meal{
     constructor(name, calories) {
@@ -160,8 +164,12 @@ class App{
             .addEventListener('click',this._removeItem.bind(this,'meal'));
         document.getElementById('workout-items')
             .addEventListener('click',this._removeItem.bind(this,'workout'));
-
-
+        document.getElementById('filter-meals')
+            .addEventListener('keyup', this._filterItems.bind(this,'meal'));
+        document.getElementById('filter-workouts')
+            .addEventListener('keyup', this._filterItems.bind(this,'workout'));
+        document.getElementById('reset')
+            .addEventListener('click', this._reset.bind(this));
     }
     _removeItem(type,e){
 
@@ -199,6 +207,27 @@ class App{
         const btCollapse=new bootstrap.Collapse(collapse,{
             toogle:true,
         });
+    }
+    _filterItems(type,e){
+        const text= e.target.value.toLowerCase();
+        document.querySelectorAll(`#${type}-items .card`).forEach(
+            item=>{
+                const name=item.firstElementChild.firstElementChild.textContent;
+                if(name.toLowerCase().indexOf(text)!==-1){
+                    item.style.display='block';
+                }else{
+                    item.style.display='none';
+                }
+            }
+        )
+    }
+    _reset(){
+        this._tracker._reset();
+        document.getElementById('meal-items').innerHTML='';
+        document.getElementById('workout-items').innerHTML='';
+        document.getElementById('filter-meals').innerHTML='';
+        document.getElementById('filter-workouts').innerHTML='';
+
     }
 }
 const app = new App();
