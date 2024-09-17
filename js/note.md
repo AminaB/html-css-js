@@ -71,4 +71,5 @@ ES modules : commonly used in the front-end
 npm install -D webpack webpack-cli
 npm install -D style-loader css-loader
 npm i -D html-webpack-plugin
+npm i -D webpack-dev-server
 
