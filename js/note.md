@@ -72,4 +72,5 @@ npm install -D webpack webpack-cli
 npm install -D style-loader css-loader
 npm i -D html-webpack-plugin
 npm i -D webpack-dev-server
+npm i  -D babel-loader @babel/core @babel/preset-env // transform arrow function to regular
 
