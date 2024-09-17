@@ -63,7 +63,7 @@ speech recognition : window.speechRecognition ...
 js package manager : npm, to install third part modules
     npm init : to create package.json
     npm install package name
-    npm install -D name (for dev dependencie)
+    npm install -D name (for dev dependencies)
 Common JS modules : use by node.js, use to bring our own modules, or files : module.exports
 ES modules : commonly used in the front-end
 
@@ -73,4 +73,4 @@ npm install -D style-loader css-loader
 npm i -D html-webpack-plugin
 npm i -D webpack-dev-server
 npm i  -D babel-loader @babel/core @babel/preset-env // transform arrow function to regular
-
+npm install --save-dev mini-css-extract-plugin // fix a quick blank flash when started
