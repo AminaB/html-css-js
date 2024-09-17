@@ -60,8 +60,12 @@ speech recognition : window.speechRecognition ...
 --- module tooling---------
 
 
-js package manager : npm
-Common JS modules : use by node.js
+js package manager : npm, to install third part modules
+    npm init : to create package.json
+    npm install package name
+    npm install -D name (for dev dependencie)
+Common JS modules : use by node.js, use to bring our own modules, or files : module.exports
 ES modules : commonly used in the front-end
 
-
+Webpack
+npm install -D webpack webpack-cli
