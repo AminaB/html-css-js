@@ -67,5 +67,8 @@ js package manager : npm, to install third part modules
 Common JS modules : use by node.js, use to bring our own modules, or files : module.exports
 ES modules : commonly used in the front-end
 
-Webpack
+
 npm install -D webpack webpack-cli
+npm install -D style-loader css-loader
+npm i -D html-webpack-plugin
+
