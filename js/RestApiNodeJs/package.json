@@ -1,0 +1,14 @@
+{
+  "name": "restapinodejs",
+  "version": "1.0.0",
+  "description": "idea sharing app",
+  "main": "server.js",
+  "scripts": {
+    "star": "node server.js"
+  },
+  "author": "Aminatou Barry",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
