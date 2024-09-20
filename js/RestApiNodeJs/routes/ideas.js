@@ -27,7 +27,9 @@ const ideas = [
 
 // Get all ideas
 
-
+router.get('/', (req, res) => {
+  res.json({ success: true, data: ideas });
+});
 // Get single idea
 router.get('/:id', (req, res) => {
   const idea = ideas.find((idea) => idea.id === +req.params.id);
@@ -50,6 +52,24 @@ router.post('/', (req, res) => {
     date: new Date().toISOString().slice(0, 10),
   };
   ideas.push(idea);
+  res.json({success:true, data:idea});
+});
+router.delete('/:id', (req, res) => {
+  const idea=ideas.find((idea) => idea.id === +req.params.id);
+  if(!idea) {
+    return res.status(404).json({success: false, error: 'Resource not found'});
+  }
+  const id=ideas.indexOf(idea);
+  ideas.splice(id,1);
+  res.json({success:true, data: {}});
+});
+router.put('/:id', (req, res) => {
+  const idea=ideas.find((idea) => idea.id === +req.params.id);
+  if(!idea) {
+    return res.status(404).json({success: false, error: 'Resource not found'});
+  }
+  idea.text = req.body.text || idea.text;
+  idea.tag = req.body.tag || idea.tag;
   res.json({success:true, data:idea});
 })
 module.exports = router;
