@@ -11,3 +11,6 @@ Node.js is a C++ program with V8 embedded, server technologies
 
 ---------- Node JS ------------------
 Node js : c++ core and js core
+
+Modules : reusable block of code
+common js module : standard of how modules should be structured
