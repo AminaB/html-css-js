@@ -16,4 +16,8 @@ Modules : reusable block of code
 common js module : standard of how modules should be structured
 require grab only a single js file, if we pass a folder to a require method, it grabs the index.js file
 
-Modules patterns : 
+Modules and ES6 : import * as greetr from 'gret'
+
+Events : 
+system event : c++core
+custom events : js core
