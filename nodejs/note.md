@@ -19,12 +19,16 @@ require grab only a single js file, if we pass a folder to a require method, it 
 Modules and ES6 : import * as greetr from 'gret'
 
 Events : 
-system event : c++core
-custom events : js core
+system event : c++core, library libuv
+custom events : js core, library event emitter
 a function constructor can inherit from event emitter.
 
 Object.create(person);
 
 'use strict' inside js file to prevent silly mistake
 
+js is synchronised, nodejs is asynchronous and use libuv to run things simultaneously.
+
+Buffer : a temporary holding spot for data
+stream : sequence of data available over time, moving data
 
