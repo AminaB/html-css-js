@@ -34,3 +34,5 @@ stream : sequence of data available over time, moving data
 
 error first callback : take an error parameter, its will be null if no error.
 
+Http
+TCp /IP : 
