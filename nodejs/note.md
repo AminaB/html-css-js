@@ -25,5 +25,6 @@ a function constructor can inherit from event emitter.
 
 Object.create(person);
 
+'use strict' inside js file to prevent silly mistake
 
 
