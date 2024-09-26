@@ -1,4 +1,4 @@
-const Emitter = require('./emitter');
+const Emitter = require('events');
 const emitter = new Emitter();
 emitter.on('greet', ()=>{
     console.log('Somewhere, someone said hello!!');
