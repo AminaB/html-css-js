@@ -32,3 +32,5 @@ js is synchronised, nodejs is asynchronous and use libuv to run things simultane
 Buffer : a temporary holding spot for data
 stream : sequence of data available over time, moving data
 
+error first callback : take an error parameter, its will be null if no error.
+
