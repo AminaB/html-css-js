@@ -1,4 +1,4 @@
-Ecmascript : standard based of js, core standard, how the language should work
+Ecmascript : standard based of js, core standard, how the language should work, ES6 2015 new js standard
 there is many js engine. ex : V8
 v8 is google js engine
 js engine : convert js code into something the computer processor can understand
@@ -21,5 +21,9 @@ Modules and ES6 : import * as greetr from 'gret'
 Events : 
 system event : c++core
 custom events : js core
+a function constructor can inherit from event emitter.
 
 Object.create(person);
+
+
+
