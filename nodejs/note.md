@@ -21,3 +21,5 @@ Modules and ES6 : import * as greetr from 'gret'
 Events : 
 system event : c++core
 custom events : js core
+
+Object.create(person);

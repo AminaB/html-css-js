@@ -1,11 +1,17 @@
-const Emitter = require('events');
-const emitter = new Emitter();
-emitter.on('greet', ()=>{
-    console.log('Somewhere, someone said hello!!');
-});
+const EventEmitter = require('events');
+const util = require('util');
 
-emitter.on('greet', ()=>{
-    console.log('A greeting occurred');
+function Greetr(){
+    this.greeting='Hello World';
+}
+util.inherits(Greetr, EventEmitter);
+Greetr.prototype.greet = function(message){
+    console.log(this.greeting + ':' +message);
+    this.emit('greet', message);
+}
+
+const greeter1= new Greetr();
+greeter1.on('greet', function(message){
+    console.log('someone greeted : '+message);
 });
-console.log('hello');
-emitter.emit('greet');
+greeter1.greet('tony');
