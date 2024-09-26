@@ -1,10 +1,16 @@
-var fs = require('fs');
+const fs = require('fs');
+const zlib = require('zlib');
 
-var readable = fs.createReadStream(__dirname + '/greet.txt', { encoding: 'utf8', highWaterMark: 16 * 1024 });
+const readable = fs.createReadStream(__dirname + '/greet.txt', {encoding: 'utf8', highWaterMark: 16 * 1024});
 
-var writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
+const writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
 
-readable.on('data', function(chunk) {
-	console.log(chunk);
-	writable.write(chunk);
-});
+// readable.on('data', function(chunk) {
+// 	console.log(chunk);
+// 	writable.write(chunk);
+// });
+
+
+//WRITE WITH PIPE
+
+readable.pipe(writable);
