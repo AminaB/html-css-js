@@ -9,7 +9,12 @@ app.get('/about', (req, res) => {
         firstname: "hello",
         lastname: "world",
     })
+});
+
+// get Params
+app.get('/person/:id', (req, res) => {
+    res.send(`<html lang="en"><body><h1>Person ${req.params.id}</h1></body></html>`);
 })
 
-app.listen(port);
 
+app.listen(port);
