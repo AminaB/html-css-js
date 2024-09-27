@@ -36,3 +36,10 @@ error first callback : take an error parameter, its will be null if no error.
 
 Http
 TCp /IP : 
+
+npm : package manager for js
+- init : initiate config
+- nodemon : dev dependencies, no need to restart server with nodeman
+- jasmine-node : write automatic test. dev dependencies
+- moment : for manipulate date
+- 
