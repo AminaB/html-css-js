@@ -45,3 +45,12 @@ npm : package manager for js
 
 express
 middleware : in case of express, sitting between request and response
+Ejs : to use template in express
+body-parser : it is a middle ware, to parse the content of a post request 
+REST : 
+
+Express generator
+- npm i express-generator -g
+- express myapp
+- cd myapp
+- npm i 
