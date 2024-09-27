@@ -42,4 +42,6 @@ npm : package manager for js
 - nodemon : dev dependencies, no need to restart server with nodeman
 - jasmine-node : write automatic test. dev dependencies
 - moment : for manipulate date
-- 
+
+express
+middleware : in case of express, sitting between request and response
