@@ -7,4 +7,5 @@ React js
 - classNme for class
 - forName for for attribute
 
--component : tape rfc enter to add code for component class or rsf for react function component
+- component : tape rfc enter to add code for component class or rsf for react function component
+- icon : npm i react-icons
