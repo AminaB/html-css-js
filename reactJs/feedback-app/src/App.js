@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import {useState} from "react";
 import feedbackData from "./data/FeedbackData";
 import Feedbacklist from "./components/Feedbacklist";
 
