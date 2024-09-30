@@ -1,11 +1,9 @@
+import React from 'react';
 function App() {
-    return (
-        <div className="App">
-        <h1>Hello From the App component</h1>
-        <p>Hello</p>
-        <label htmlFor="inputEmail">Email</label>
-        </div>
-    )
+    return React.createElement('div', {className:'container'},
+            React.createElement('h1', {},'My App')
+        )
+
 }
 
 export default App;
