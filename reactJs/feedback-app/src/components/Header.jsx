@@ -2,8 +2,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-function Header({text}) {
-    const headerStyle= {backgroundColor: "blue", color: "red"}
+function Header({text, bgColor, textColor}) {
+    const headerStyle= {backgroundColor: bgColor, color: textColor}
     return (
         <header style={headerStyle}>
             <div className="container">
