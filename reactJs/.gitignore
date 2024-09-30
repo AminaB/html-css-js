@@ -1,0 +1,9 @@
+React js
+- create and maintained by facebook
+- build things as component
+- add react devopper tool to chrome
+- create first app
+    install nodejs
+    npx create-react-app feedback-app --use-npm
+
+/feedback-app/package-lock.json
