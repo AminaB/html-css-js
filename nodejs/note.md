@@ -56,3 +56,8 @@ Express generator
 - npm i 
 
 
+mongo -
+mongolab
+mongoose
+
+

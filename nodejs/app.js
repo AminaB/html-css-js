@@ -1,5 +1,5 @@
 const great= require('./greet');
-great;
+
 
 const obj ={
     name : 'John Doe',
