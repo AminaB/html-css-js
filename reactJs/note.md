@@ -6,3 +6,5 @@ React js
 - the return only one html element (tag) or empty tag(<></>)
 - classNme for class
 - forName for for attribute
+
+-component : tape rfc enter to add code for component class or frc for react function component
