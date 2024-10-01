@@ -22,3 +22,7 @@ React js
   npx create-react-app feedback-app-context-provider --use-npm
 
 - create 1 context by type of resources (user, ...)
+
+
+- deploy 
+- npm run build : create build folder, and push the build folder into netlify
