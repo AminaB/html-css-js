@@ -9,3 +9,6 @@ React js
 
 - component : tape rfc enter to add code for component class or rsf for react function component
 - icon : npm i react-icons
+
+- id generator : npm i uuid
+- animation : npm i framer-motion
