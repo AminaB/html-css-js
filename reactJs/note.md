@@ -13,3 +13,7 @@ React js
 - id generator : npm i uuid
 - animation : npm i framer-motion
 - routing : npm i react-router-dom
+- <Link to=''/> : to create link
+- <NavLink to='/'  activeClassName='active> create manu
+- get url params : useParams().name
+- redirect : return <Navigate to='/notFound'/>, or useNavigate('/about')
