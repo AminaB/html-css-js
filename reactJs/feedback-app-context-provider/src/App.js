@@ -9,17 +9,12 @@ import FeedbackStats from "./components/FeedbackStats";
 import FeedBackForm from "./components/FeedBackForm";
 import AboutPage from "./pages/aboutPage";
 import AboutIconLink from "./components/AboutIconLink";
-import {FeedbackProvider} from "./components/context/FeedbackContext"; //  curly braces because FeedbackProvideris not the default export
+import {FeedbackProvider} from "./context/FeedbackContext"; //  curly braces because FeedbackProvideris not the default export
 
 
 function App() {
     const [feedback, setFeedback] = useState(feedbackData);
-    const deleteFeedBack = (id) => {
-        if(window.confirm("Are you sure you want to delete this feedback?")){
-           setFeedback(feedbackData.filter((item) => item.id !== id))
-        }
 
-    }
     const addFeedback = (newFeedBack) => {
         newFeedBack.id=uuidv4();
 
@@ -34,8 +29,8 @@ function App() {
                         <Route exact  path='/' element={
                             <>
                                 <FeedBackForm handleAddFeedback={addFeedback}/>
-                                <FeedbackStats feedback={feedback} />
-                                <Feedbacklist  handleDelete={deleteFeedBack} />
+                                <FeedbackStats />
+                                <Feedbacklist  />
                                 <AboutIconLink/>
                             </>
                         }>
