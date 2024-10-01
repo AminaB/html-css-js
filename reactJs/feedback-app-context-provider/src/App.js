@@ -9,6 +9,7 @@ import FeedbackStats from "./components/FeedbackStats";
 import FeedBackForm from "./components/FeedBackForm";
 import AboutPage from "./pages/aboutPage";
 import AboutIconLink from "./components/AboutIconLink";
+import {FeedbackProvider} from "./components/context/FeedbackContext"; //  curly braces because FeedbackProvideris not the default export
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         setFeedback([newFeedBack,...feedbackData]);
     }
     return (
-        <>
+        <FeedbackProvider>
             <Router>
                 <Header />
                 <div className="container">
@@ -46,7 +47,7 @@ function App() {
 
                 </div>
             </Router>
-        </>
+        </FeedbackProvider>
 
     )
 }

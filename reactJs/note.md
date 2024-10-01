@@ -20,3 +20,5 @@ React js
 
 - context & provider :  passing data through component without to pass props manually
   npx create-react-app feedback-app-context-provider --use-npm
+
+- create 1 context by type of resources (user, ...)
