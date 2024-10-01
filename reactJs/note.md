@@ -12,3 +12,4 @@ React js
 
 - id generator : npm i uuid
 - animation : npm i framer-motion
+- routing : npm i react-router-dom
