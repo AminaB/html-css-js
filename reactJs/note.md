@@ -13,7 +13,10 @@ React js
 - id generator : npm i uuid
 - animation : npm i framer-motion
 - routing : npm i react-router-dom
-- <Link to=''/> : to create link
+- <Link to='/'/> : to create link
 - <NavLink to='/'  activeClassName='active> create manu
 - get url params : useParams().name
 - redirect : return <Navigate to='/notFound'/>, or useNavigate('/about')
+
+- context & provider :  passing data through component without to pass props manually
+  npx create-react-app feedback-app-context-provider --use-npm
