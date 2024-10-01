@@ -8,6 +8,7 @@ import Feedbacklist from "./components/Feedbacklist";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedBackForm from "./components/FeedBackForm";
 import AboutPage from "./pages/aboutPage";
+import AboutIconLink from "./components/AboutIconLink";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
                                 <FeedBackForm handleAddFeedback={addFeedback}/>
                                 <FeedbackStats feedback={feedback} />
                                 <Feedbacklist  feedback={feedback}  handleDelete={deleteFeedBack} />
+                                <AboutIconLink/>
                             </>
                         }>
 
