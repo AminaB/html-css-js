@@ -26,3 +26,7 @@ React js
 
 - deploy 
 - npm run build : create build folder, and push the build folder into netlify
+
+- APi REQUEST
+- JSON Server : mock backend : npm install json-server
+- 
