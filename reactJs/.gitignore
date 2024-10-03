@@ -7,3 +7,4 @@ React js
     npx create-react-app feedback-app --use-npm
 
 /feedback-app/package-lock.json
+/github-finder-app-main/package-lock.json

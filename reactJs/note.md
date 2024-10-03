@@ -29,4 +29,12 @@ React js
 
 - APi REQUEST
 - JSON Server : mock backend : npm install json-server
-- 
+
+
+- github finder project
+- install talwind : 
+  - npm install -D tailwindcss
+  -  npx tailwindcss init
+- install craco : for start, test and build project
+- instal daisy ui and add to talwind
+- reducer : function that take two arguments, current state and action, similar to useState
