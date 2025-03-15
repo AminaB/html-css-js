@@ -18,7 +18,7 @@ React js
 - get url params : useParams().name
 - redirect : return <Navigate to='/notFound'/>, or useNavigate('/about')
 
-- context & provider :  passing data through component without to pass props manually
+- context & provider :  passing data through component without passing props manually
   npx create-react-app feedback-app-context-provider --use-npm
 
 - create 1 context by type of resources (user, ...)
